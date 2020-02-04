@@ -1,0 +1,33 @@
+<html>
+  <head>
+    <title>Example form</title>
+  </head>
+  <body>
+    <form method="POST" action="/message">
+      <fieldset title="Mobile number">
+        <div>
+          <label>
+            <div><strong>Your mobile number</strong></div>
+            <div><input type="tel" name="msisdn" placeholder="+15555551234" pattern="^\+(\d{3})*[0-9,\-]{8,}" required /></div>
+          </label>
+        </div>
+        <br />
+        <div>
+          <div>
+            <textarea rows="4" cols="120" readonly>Example terms: By sending your phone number, you accept the terms and conditions of X. Data is processed by X in X. Y is not responsible for data processing by X. Our privacy statement does not apply to this. Detailed information about the way in which Y guarantees the privacy of your data can be found here: https://link-to-the-privacy-policy-of-y.</textarea>
+          </div>
+          <div>
+            <label>
+              <span>I agree to the terms </span>
+              <input type="checkbox" name="agreed" required />
+            </label>
+          </div>
+        </div>
+        <br />
+        <div>
+          <input type="submit" title="Submit">
+        </div>
+      </fieldset>
+    </form>
+  </body>
+</html>
