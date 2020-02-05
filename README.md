@@ -58,7 +58,7 @@ You can copy the token from the REST API configuration settings within the Flow.
 
 Within the Flow.ai dashboard, open the messaging channel you'd like to use to send a message. Copy and paste the URL and copy the last part of the URL inside the `.env` file.
 
-For example, if this is the URL you'll need the last part: https://app.flow.ai/92b39e60-709c-46b6-bc1d-c5a13e89e5a9/channels/**d3abcea7-g49f-4689-c1dc-1581c95adfd4**
+For example, if this is the URL you'll need the last part: https://app.flow.ai/92b39e60-709c-46b6-bc1d-c5a13e89e5a9/channels/ **d3abcea7-g49f-4689-c1dc-1581c95adfd4**
 
 ##### EVENT_NAME
 
