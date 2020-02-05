@@ -7,6 +7,9 @@ const helmet = require('helmet');
 const bodyParser = require('body-parser')
 const request = require("request-promise")
 
+// Running locally, load .env configuration
+if (process.env.NODE_ENV !== 'production') require('dotenv').config()
+
 // Load configuration items
 const apiEndpoint = process.env.API_ENDPOINT || 'https://api.flow.ai/rest/v1/trigger/event'
 const apiToken = process.env.API_TOKEN || 'YOUR FLOW.AI REST API TOKEN'
