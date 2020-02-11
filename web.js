@@ -13,7 +13,8 @@ if (process.env.NODE_ENV !== 'production') require('dotenv').config()
 // Load configuration items
 const apiEndpoint = process.env.API_ENDPOINT || 'https://api.flow.ai/rest/v1/trigger/event'
 const apiToken = process.env.API_TOKEN || 'YOUR FLOW.AI REST API TOKEN'
-const apiChannelId = process.env.API_CHANNEL_ID || 'YOUR FLOW.AI REST CHANNEL ID'
+const channelName = process.env.API_CHANNEL_ID || 'THE FLOW.AI BROADCAST CHANNEL NAME'
+const channelExternalId = process.env.API_CHANNEL_ID || 'THE FLOW.AI BROADCAST CHANNEL EXTERNAL ID'
 const eventName = process.env.EVENT_NAME || 'YOUR FLOW.AI EVENT NAME'
 
 /**
@@ -48,7 +49,30 @@ const sendMessage = async msisdn => {
     const parsedMsisdn = msisdn.trim().replace(' ','')
     const opts = {
       method: 'POST',
-      uri: `${apiEndpoint}/${parsedMsisdn}|w_${apiChannelId}?eventName=${eventName}`,
+      uri: `${apiEndpoint}/broadcast/instant`,
+      body: {
+        audience: [{
+          name: 'Anonymous',
+          phoneNumber: parsedMsisdn,
+          timezone: '1',
+          lang: 'nl',
+          profile: {
+          }
+        }],
+        channel: {
+          channelName,
+          externalId: channelExternalId
+        },
+        payload: {
+          type: 'event',
+          eventName: eventName,
+          params: {
+            destination: [{
+              value: 'Paris'
+            }]
+          }
+        }
+      },
       headers: {
         'Content-Type': 'application/json',
         'Authorization': apiToken
@@ -61,6 +85,7 @@ const sendMessage = async msisdn => {
  
   } catch(err) {
     console.error('Error while calling the Flow API', err)
+    throw err
   }
 }
 
