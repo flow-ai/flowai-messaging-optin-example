@@ -11,10 +11,10 @@ const request = require("request-promise")
 if (process.env.NODE_ENV !== 'production') require('dotenv').config()
 
 // Load configuration items
-const apiEndpoint = process.env.API_ENDPOINT || 'https://api.flow.ai/rest/v1/trigger/event'
+const apiEndpoint = process.env.API_ENDPOINT || 'https://api.flow.ai/rest/v1'
 const apiToken = process.env.API_TOKEN || 'YOUR FLOW.AI REST API TOKEN'
-const channelName = process.env.API_CHANNEL_ID || 'THE FLOW.AI BROADCAST CHANNEL NAME'
-const channelExternalId = process.env.API_CHANNEL_ID || 'THE FLOW.AI BROADCAST CHANNEL EXTERNAL ID'
+const channelName = process.env.CHANNEL_NAME || 'THE FLOW.AI BROADCAST CHANNEL NAME'
+const channelExternalId = process.env.CHANNEL_EXTERNAL_ID || 'THE FLOW.AI BROADCAST CHANNEL EXTERNAL ID'
 const eventName = process.env.EVENT_NAME || 'YOUR FLOW.AI EVENT NAME'
 
 /**
