@@ -18,11 +18,10 @@ The Flow.ai [REST API](https://flow.ai/docs/api-docs/#rest-api) is then used to 
 
 ### Configure Flow.ai
 
-- Login to Flow.ai and select the project you'd like to connect
-- Go to the organisation settings and add a new API key if you do not have one
-- Next return to the project and the integrations overview
-- Add a REST API integration
-- Configure the REST API (fill out a fake callback URL if it's required)
+- Login to [Flow.ai](https://app.flow.ai) and choose the project you'd like to connect
+- Go to the [organisation settings](https://app.flow.ai/default/settings/organisation/tokens) and add a new API key if you do not have one
+- Next return to the project and the [integrations](https://app.flow.ai/default/integrations) overview
+- Add a REST API integration and configure the REST API
 
 ### Configure and run
 
@@ -40,13 +39,16 @@ yarn
 
 #### 3. Add a `.env` configuration file
 
-Create a file named `.env` in the folder you cloned the project and add the following content:
+Create a file named `.env` inside the folder you cloned the project and add the following content:
 
 ```bash
 API_TOKEN="Copy and paste the token from the REST API configuration"
-API_CHANNEL_ID="Copy and paste channelId from Flow.ai"
+CHANNEL_NAME="This depends on the integration (see table below)"
+CHANNEL_EXTERNAL_ID="This depends on the integration (see table below)"
 EVENT_NAME="Choose an event name to trigger"
 ```
+
+> You can find the above CHANNEL_NAME and CHANNEL_EXTERNAL_ID values inside the [reference table](#configuration-table) below
 
 #### 4. Add configuration data
 
@@ -77,3 +79,15 @@ You can run this example in different ways, but one of the easiest is Heroku. Ma
 **Deploy to heroku**
 
 [![Deploy](https://www.herokucdn.com/deploy/button.png)](https://heroku.com/deploy)
+
+## Configuration table
+
+You can broadcast messages to a channel that supports phone numbers. For the configuration you need to use the following reference table to copy and paste the values for `CHANNEL_NAME` and `CHANNEL_EXTERNAL_ID`.
+
+| Channel | CHANNEL_NAME | CHANNEL_EXTERNAL_ID (copy value from field) |
+|------------|--------------|--------------------------|
+| Google RBM | `rbm` | Project ID |
+| MessageMedia | `messagemedia` | Phone Number |
+| Telekom RBM | `telekom` | Telekom bot ID |
+| Twilio | `twilio` | Phone Number |
+| WhatsApp | `whatsapp` | Production phone number  |
