@@ -54,8 +54,6 @@ const sendMessage = async msisdn => {
         audience: [{
           name: 'Anonymous',
           phoneNumber: parsedMsisdn,
-          timezone: '1',
-          lang: 'nl',
           profile: {
           }
         }],
@@ -65,12 +63,7 @@ const sendMessage = async msisdn => {
         },
         payload: {
           type: 'event',
-          eventName: eventName,
-          params: {
-            destination: [{
-              value: 'Paris'
-            }]
-          }
+          eventName: eventName
         }
       },
       headers: {
