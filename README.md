@@ -50,23 +50,39 @@ CHANNEL_EXTERNAL_ID="This depends on the integration (see table below)"
 EVENT_NAME="Choose an event name to trigger"
 ```
 
-> You can find the above CHANNEL_NAME and CHANNEL_EXTERNAL_ID values inside the [reference table](#configuration-table) below
-
-#### 4. Add configuration data
+#### 4. Change the configuration data
 
 ##### API_TOKEN
 
-You can copy the token from the REST API configuration settings within the Flow.ai Dashboard. Paste the token inside the `.env` file you just created.
+You can copy the token from the REST API configuration settings within the Flow.ai Dashboard. Add the token inside the `.env` file you just created.
 
-##### API_CHANNEL_ID
+##### CHANNEL_NAME
 
-Within the Flow.ai dashboard, open the messaging channel you'd like to use to send a message. Copy and paste the URL and copy the last part of the URL inside the `.env` file.
+Use the reference table below to determine the `CHANNEL_NAME` to copy and paste:
 
-For example, if this is the URL you'll need the last part: https://app.flow.ai/92b39e60-709c-46b6-bc1d-c5a13e89e5a9/channels/ **d3abcea7-g49f-4689-c1dc-1581c95adfd4**
+| Channel | CHANNEL_NAME |
+|------------|--------------|
+| Google RBM | `rbm` |
+| MessageMedia | `messagemedia` |
+| Telekom RBM | `telekom` |
+| Twilio | `twilio` |
+| WhatsApp | `whatsapp` |
+
+##### CHANNEL_EXTERNAL_ID
+
+Within the Flow.ai dashboard, open the messaging channel you'd like to use to send a message. Use the reference table below to find the value to copy and paste.
+
+| Channel | CHANNEL_EXTERNAL_ID (copy value from field) |
+|------------|--------------|
+| Google RBM | Project ID |
+| MessageMedia | Phone Number |
+| Telekom RBM | Telekom bot ID |
+| Twilio | Phone Number |
+| WhatsApp | Production phone number |
 
 ##### EVENT_NAME
 
-This can be any event you configured within Flow. Simply add the name of the event you'd like to trigger
+This can be any [event](https://flow.ai/docs/replies/event) you configured within your flows. Simply add the name of the event you'd like to trigger.
 
 #### 3. Running locally
 
@@ -76,20 +92,9 @@ The server will run on http://localhost:8080
 
 ### 4. Deploy online
 
-You can run this example in different ways, but one of the easiest is Heroku. Make sure you have all the necessary information including token and channelId when you install it.
+You can run this example in different ways, but one of the easiest is Heroku. Make sure you have all the necessary information including token, channel name and external ID when you install it.
 
 **Deploy to heroku**
 
 [![Deploy](https://www.herokucdn.com/deploy/button.png)](https://heroku.com/deploy)
 
-## Configuration table
-
-You can broadcast messages to a channel that supports phone numbers. For the configuration you need to use the following reference table to copy and paste the values for `CHANNEL_NAME` and `CHANNEL_EXTERNAL_ID`.
-
-| Channel | CHANNEL_NAME | CHANNEL_EXTERNAL_ID (copy value from field) |
-|------------|--------------|--------------------------|
-| Google RBM | `rbm` | Project ID |
-| MessageMedia | `messagemedia` | Phone Number |
-| Telekom RBM | `telekom` | Telekom bot ID |
-| Twilio | `twilio` | Phone Number |
-| WhatsApp | `whatsapp` | Production phone number  |
