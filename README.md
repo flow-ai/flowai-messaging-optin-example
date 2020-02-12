@@ -2,6 +2,8 @@
 
 This project showcases an example how to opt-in customers for receiving a message based on a phone number (MSISDN). This can be used for example to allow customers with desktop computers to continue a conversation on their mobile phone.
 
+![alt text](assets/example-form.png "Example form")
+
 ## How it works
 
 This example runs a simple webserver that hosts a form. A user can submit a valid phone number to trigger an event. 
