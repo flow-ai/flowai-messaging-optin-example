@@ -8,8 +8,11 @@
     "API_TOKEN": {
       "description": "Copy and paste the REST API token"
     },
-    "API_CHANNEL_ID": {
-      "description": "Copy and paste the Messaging channel ID"
+    "CHANNEL_NAE": {
+      "description": "Please see our docs. For example: rbm, twilio, telekom"
+    },
+    "CHANNEL_EXTERNAL_ID": {
+      "description": "Please see our docs"
     },
     "EVENT_NAME": {
       "description": "What event to trigger"
