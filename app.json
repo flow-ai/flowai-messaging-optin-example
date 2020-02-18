@@ -8,7 +8,7 @@
     "API_TOKEN": {
       "description": "Copy and paste the REST API token"
     },
-    "CHANNEL_NAE": {
+    "CHANNEL_NAME": {
       "description": "Please see our docs. For example: rbm, twilio, telekom"
     },
     "CHANNEL_EXTERNAL_ID": {
